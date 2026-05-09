@@ -18,125 +18,125 @@ font-family:Arial,sans-serif;
 
 body{
 background:#ececec;
+overflow:hidden;
 color:black;
-padding:25px;
-overflow-x:hidden;
+height:100vh;
+padding:20px 30px;
 }
 
-.topbar{
+.top{
 display:flex;
 justify-content:space-between;
 align-items:center;
-font-size:18px;
-margin-bottom:40px;
+font-size:16px;
+margin-bottom:10px;
 }
 
-.center-title{
+.middle{
 font-weight:900;
-font-size:28px;
+font-size:24px;
 }
 
-.big-title{
-text-align:center;
-font-size:95px;
+.title{
+font-size:120px;
 font-weight:900;
 line-height:0.9;
-margin-bottom:70px;
+text-align:center;
+margin-bottom:20px;
 }
 
-.layout{
+.main{
 display:flex;
 justify-content:center;
 gap:40px;
 align-items:flex-start;
-flex-wrap:wrap;
 }
 
 .left{
 display:flex;
 flex-direction:column;
-gap:40px;
-}
-
-.box{
-border:4px solid black;
-background:white;
-position:relative;
-overflow:hidden;
-}
-
-.pic-box{
-width:320px;
-height:500px;
-}
-
-.pic-box img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.gif-box{
-width:260px;
-height:260px;
-}
-
-.gif-box img{
-width:100%;
-height:100%;
-object-fit:cover;
+align-items:center;
+gap:10px;
 }
 
 .right{
 display:flex;
 flex-direction:column;
-gap:40px;
+align-items:center;
+gap:30px;
 }
 
-.quote-box{
-width:380px;
-min-height:240px;
-padding:25px;
-font-size:20px;
+.box{
+border:3px solid black;
+background:white;
+overflow:hidden;
+position:relative;
+}
+
+.pic{
+width:260px;
+height:380px;
+}
+
+.pic img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.quote{
+width:330px;
+height:180px;
+padding:18px;
+font-size:14px;
 font-weight:700;
 display:flex;
 flex-direction:column;
 justify-content:center;
-gap:20px;
+gap:10px;
 }
 
-.playlist-box{
-width:230px;
-height:230px;
+.playlist{
+width:170px;
+height:170px;
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
+padding:10px;
 }
 
-.playlist-box a{
+.playlist a{
 text-decoration:none;
 color:black;
-font-size:28px;
+font-size:22px;
 font-weight:900;
 }
 
+.gif{
+width:190px;
+height:190px;
+}
+
+.gif img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
 .label{
-font-size:22px;
+font-size:15px;
 font-weight:700;
-margin-top:10px;
-position:relative;
 }
 
 .bottom{
-margin-top:50px;
+margin-top:15px;
 text-align:center;
-font-size:20px;
+font-size:14px;
 font-style:italic;
 }
 
-.password-screen{
+.password{
 position:fixed;
 top:0;
 left:0;
@@ -150,118 +150,88 @@ flex-direction:column;
 z-index:999;
 }
 
-.password-screen h1{
-font-size:60px;
-margin-bottom:15px;
+.password h1{
+font-size:55px;
+margin-bottom:10px;
 }
 
-.password-screen p{
-margin-bottom:20px;
+.password p{
 letter-spacing:3px;
+margin-bottom:20px;
 }
 
-.password-screen input{
-width:260px;
+.password input{
+width:240px;
 padding:15px;
-font-size:20px;
 border:3px solid black;
-outline:none;
+font-size:20px;
 text-align:center;
+outline:none;
 }
 
-.password-screen button{
+.password button{
 margin-top:20px;
-padding:14px 35px;
+padding:12px 35px;
 border:none;
 background:black;
 color:white;
 font-size:18px;
-font-weight:bold;
+font-weight:900;
 cursor:pointer;
 }
 
-#message{
+#msg{
 margin-top:20px;
-font-size:18px;
-font-weight:bold;
+font-weight:700;
 }
 
 #content{
 display:none;
-animation:fade 1s ease;
-}
-
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(15px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-@media(max-width:900px){
-
-.big-title{
-font-size:70px;
-}
-
-.layout{
-flex-direction:column;
-align-items:center;
-}
-
-.quote-box{
-width:320px;
-}
-
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="password-screen" id="lock">
+<div class="password" id="lock">
 
 <h1>ACCESS REQUIRED</h1>
 
 <p>ENTER PASSWORD</p>
 
-<input type="password" id="password">
+<input type="password" id="pass">
 
-<button onclick="unlock()">ENTER</button>
+<button onclick="openPage()">ENTER</button>
 
-<div id="message"></div>
+<div id="msg"></div>
 
 </div>
 
 <div id="content">
 
-<div class="topbar">
+<div class="top">
 
 <div>ACHYUTTAM</div>
 
-<div class="center-title">FHRO KING</div>
+<div class="middle">FHRO KING</div>
 
 <div>BAKSHI</div>
 
 </div>
 
-<div class="big-title">
+<div class="title">
 
-ITS ABOUT ME!
+ITS ABOUT ME !
 
 </div>
 
-<div class="layout">
+<div class="main">
 
 <div class="left">
 
-<div class="box pic-box">
+<div class="box pic">
 
 <img src="https://kommodo.ai/i/03istlbyYfns620J2tca">
 
@@ -271,7 +241,7 @@ ITS ABOUT ME!
 ↳ My picture
 </div>
 
-<div class="box gif-box">
+<div class="box gif">
 
 <img src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyZ243ZzFuZHMwcXQ3b2psdGI4a2U1em5ieThqN29kb2o1MW40emQ5byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pGCd67ZEnxo7QZzwjJ/giphy.gif">
 
@@ -285,7 +255,7 @@ ITS ABOUT ME!
 
 <div class="right">
 
-<div class="box quote-box">
+<div class="box quote">
 
 <div>• I don’t play the odds. I play the man.</div>
 
@@ -298,14 +268,14 @@ ITS ABOUT ME!
 </div>
 
 <div class="label">
-↳ Quotes I like
+↳ quotes I like
 </div>
 
-<div class="box playlist-box">
+<div class="box playlist">
 
 <a href="https://open.spotify.com/playlist/6PSil3etE2XmR1tbPUa7ny?si=Afd0WDbYQcSP-PBxHbAtlw&pi=TfbFHQFTTP61W" target="_blank">
 
-OPEN MY PLAYLIST
+OPEN<br>PLAYLIST
 
 </a>
 
@@ -329,13 +299,12 @@ THIS GUY !! YES THIS GUY IS JUST CRAZY AND SO MUCH CHALANT
 
 <script>
 
-function unlock(){
+function openPage(){
 
-let pass = document
-.getElementById("password")
-.value;
+let password =
+document.getElementById("pass").value;
 
-if(pass === "TJS4"){
+if(password === "TJS4"){
 
 document
 .getElementById("lock")
@@ -350,7 +319,7 @@ document
 else{
 
 document
-.getElementById("message")
+.getElementById("msg")
 .innerHTML = "ACCESS DENIED";
 
 }
