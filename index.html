@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FHRO KING</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#ececec;
+color:black;
+padding:25px;
+overflow-x:hidden;
+}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:18px;
+margin-bottom:40px;
+}
+
+.center-title{
+font-weight:900;
+font-size:28px;
+}
+
+.big-title{
+text-align:center;
+font-size:95px;
+font-weight:900;
+line-height:0.9;
+margin-bottom:70px;
+}
+
+.layout{
+display:flex;
+justify-content:center;
+gap:40px;
+align-items:flex-start;
+flex-wrap:wrap;
+}
+
+.left{
+display:flex;
+flex-direction:column;
+gap:40px;
+}
+
+.box{
+border:4px solid black;
+background:white;
+position:relative;
+overflow:hidden;
+}
+
+.pic-box{
+width:320px;
+height:500px;
+}
+
+.pic-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.gif-box{
+width:260px;
+height:260px;
+}
+
+.gif-box img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.right{
+display:flex;
+flex-direction:column;
+gap:40px;
+}
+
+.quote-box{
+width:380px;
+min-height:240px;
+padding:25px;
+font-size:20px;
+font-weight:700;
+display:flex;
+flex-direction:column;
+justify-content:center;
+gap:20px;
+}
+
+.playlist-box{
+width:230px;
+height:230px;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.playlist-box a{
+text-decoration:none;
+color:black;
+font-size:28px;
+font-weight:900;
+}
+
+.label{
+font-size:22px;
+font-weight:700;
+margin-top:10px;
+position:relative;
+}
+
+.bottom{
+margin-top:50px;
+text-align:center;
+font-size:20px;
+font-style:italic;
+}
+
+.password-screen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:999;
+}
+
+.password-screen h1{
+font-size:60px;
+margin-bottom:15px;
+}
+
+.password-screen p{
+margin-bottom:20px;
+letter-spacing:3px;
+}
+
+.password-screen input{
+width:260px;
+padding:15px;
+font-size:20px;
+border:3px solid black;
+outline:none;
+text-align:center;
+}
+
+.password-screen button{
+margin-top:20px;
+padding:14px 35px;
+border:none;
+background:black;
+color:white;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+#message{
+margin-top:20px;
+font-size:18px;
+font-weight:bold;
+}
+
+#content{
+display:none;
+animation:fade 1s ease;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(15px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:900px){
+
+.big-title{
+font-size:70px;
+}
+
+.layout{
+flex-direction:column;
+align-items:center;
+}
+
+.quote-box{
+width:320px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="password-screen" id="lock">
+
+<h1>ACCESS REQUIRED</h1>
+
+<p>ENTER PASSWORD</p>
+
+<input type="password" id="password">
+
+<button onclick="unlock()">ENTER</button>
+
+<div id="message"></div>
+
+</div>
+
+<div id="content">
+
+<div class="topbar">
+
+<div>ACHYUTTAM</div>
+
+<div class="center-title">FHRO KING</div>
+
+<div>BAKSHI</div>
+
+</div>
+
+<div class="big-title">
+
+ITS ABOUT ME!
+
+</div>
+
+<div class="layout">
+
+<div class="left">
+
+<div class="box pic-box">
+
+<img src="https://kommodo.ai/i/03istlbyYfns620J2tca">
+
+</div>
+
+<div class="label">
+↳ My picture
+</div>
+
+<div class="box gif-box">
+
+<img src="https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyZ243ZzFuZHMwcXQ3b2psdGI4a2U1em5ieThqN29kb2o1MW40emQ5byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/pGCd67ZEnxo7QZzwjJ/giphy.gif">
+
+</div>
+
+<div class="label">
+↳ My fav gif
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="box quote-box">
+
+<div>• I don’t play the odds. I play the man.</div>
+
+<div>• I keep a room full of mirrors so I can be surrounded by winners.</div>
+
+<div>• History is written by the victors.</div>
+
+<div>• The word impossible exists only in the dictionary of losers.</div>
+
+</div>
+
+<div class="label">
+↳ Quotes I like
+</div>
+
+<div class="box playlist-box">
+
+<a href="https://open.spotify.com/playlist/6PSil3etE2XmR1tbPUa7ny?si=Afd0WDbYQcSP-PBxHbAtlw&pi=TfbFHQFTTP61W" target="_blank">
+
+OPEN MY PLAYLIST
+
+</a>
+
+</div>
+
+<div class="label">
+↳ My fav playlist
+</div>
+
+</div>
+
+</div>
+
+<div class="bottom">
+
+THIS GUY !! YES THIS GUY IS JUST CRAZY AND SO MUCH CHALANT
+
+</div>
+
+</div>
+
+<script>
+
+function unlock(){
+
+let pass = document
+.getElementById("password")
+.value;
+
+if(pass === "TJS4"){
+
+document
+.getElementById("lock")
+.style.display = "none";
+
+document
+.getElementById("content")
+.style.display = "block";
+
+}
+
+else{
+
+document
+.getElementById("message")
+.innerHTML = "ACCESS DENIED";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
